@@ -1,0 +1,269 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+    color: #222222;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background-color: #b22222;
+    box-shadow: 0 0 12px rgba(255, 80, 80, 0.65);
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    color: #b22222;
+}
+
+/* Explicit list spacing keeps bullets readable on narrow screens. */
+main ul {
+    padding-left: 1.5rem;
+}
+
+.membership-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.membership-columns section {
+    flex: 1 1 300px;
+    min-width: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer table {
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto;
+    border-collapse: collapse;
+}
+
+footer caption {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+footer th,
+footer td {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+.social-links a {
+    display: inline-block;
+    background-color: #b22222;
+    color: white;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+    background-color: #8b1a1a;
+    text-decoration: underline;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
+.video {
+    max-width: 700px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.map {
+    height: 400px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+nav a {
+    margin: 0;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0 0 24px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+legend {
+    padding: 0 8px;
+    font-weight: bold;
+    color: #b22222;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+    font: inherit;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #777777;
+    border-radius: 4px;
+    background-color: white;
+    color: #222222;
+}
+
+select {
+    margin-bottom: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 16px;
+    font-weight: normal;
+}
+
+input[type="checkbox"] {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+}
+
+button {
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #b22222;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8b1a1a;
+}
+
+:focus-visible {
+    outline: 3px solid #2868c7;
+    outline-offset: 3px;
+}
+
+.form-result:not(:empty) {
+    padding: 16px;
+    border-left: 4px solid #b22222;
+    background-color: #f2f2f2;
+}
+
+footer a {
+    color: white;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 20px 12px;
+    }
+
+    main,
+    section,
+    fieldset {
+        padding: 14px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        padding: 8px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    footer th,
+    footer td {
+        padding: 6px;
+    }
+}

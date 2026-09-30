@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- Lab 3 website URL: https://ahnafraskey.github.io/barbell-club/ -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Training | Barbell Club</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="images/logo.png" alt="Barbell Club logo">
+        <h1>Barbell Club</h1>
+        <h2>Build Strength, Build Confidence. </h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="memberships.html">Memberships</a>
+            <a href="location.html">Location &amp; Hours</a>
+            <a href="personal-training.html" aria-current="page">Personal Training</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Personal Training Request</h2>
+            <p>Tell us about your goals and preferred training schedule.</p>
+            <p id="training-note">Class project demo: no information is sent or saved, and no session is booked. Fields marked * are required.</p>
+            <form id="training-form" aria-describedby="training-note">
+                <fieldset>
+                    <legend>Contact information</legend>
+                    <div class="form-grid">
+                        <div><label for="training-name">Full name *</label><input id="training-name" name="full_name" autocomplete="name" required maxlength="100"></div>
+                        <div><label for="training-email">Email *</label><input type="email" id="training-email" name="email" autocomplete="email" required></div>
+                        <div><label for="training-phone">Phone number</label><input type="tel" id="training-phone" name="phone" autocomplete="tel"></div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Training preferences</legend>
+                    <div class="form-grid">
+                        <div>
+                            <label for="training-goal">Primary fitness goal *</label>
+                            <input id="training-goal" name="goal" list="fitness-goals" required maxlength="150" aria-describedby="goal-hint">
+                            <datalist id="fitness-goals">
+                                <option value="Build strength"></option>
+                                <option value="Build muscle"></option>
+                                <option value="Improve lifting technique"></option>
+                                <option value="Prepare for a powerlifting meet"></option>
+                                <option value="Improve general fitness"></option>
+                            </datalist>
+                            <small id="goal-hint">Choose a suggestion or type your own goal.</small>
+                        </div>
+                        <div><label for="experience">Experience level *</label><select id="experience" name="experience" required><option value="">Choose your level</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+                        <div><label for="package">Training package *</label><select id="package" name="package" required><option value="">Choose a package</option><option value="single">Single session — $60</option><option value="five">Five sessions — $275</option></select></div>
+                        <div><label for="training-date">Preferred date *</label><input type="date" id="training-date" name="preferred_date" required></div>
+                        <div><label for="training-time">Preferred time *</label><select id="training-time" name="preferred_time" required><option value="">Choose a time</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+                    </div>
+                    <label for="training-notes">Additional goals or scheduling notes</label>
+                    <textarea id="training-notes" name="notes" rows="4" maxlength="1000"></textarea>
+                </fieldset>
+                <button type="submit">Submit training request</button>
+                <p id="training-result" class="form-result" role="status"></p>
+            </form>
+        </section>
+    </main>
+    <script>
+        const trainingForm = document.getElementById('training-form');
+        const dateInput = document.getElementById('training-date');
+        const today = new Date();
+        dateInput.min = today.getFullYear() + '-' + String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+        trainingForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('training-result').textContent = 'Your training request passed validation. This is a demo only; no request was sent and no session was booked.';
+            trainingForm.reset();
+        });
+    </script>
+
+<footer>
+    <h2>Visit Barbell Club</h2>
+    <p>Address: 123 Barbell Lane, Blackwood, NJ 08012</p>
+    <table>
+        <caption>Hours of Operation</caption>
+        <thead>
+            <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Monday–Friday</th>
+                <td>5:00 AM–11:00 PM</td>
+            </tr>
+            <tr>
+                <th scope="row">Saturday</th>
+                <td>5:00 AM–11:00 PM</td>
+            </tr>
+            <tr>
+                <th scope="row">Sunday</th>
+                <td>5:00 AM–11:00 PM</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Phone: (856) 555-0123</p>
+    <p>Email: info@barbellclub.example</p>
+    <p>Social Media (demo links for our fictional gym)</p>
+    <div class="social-links">
+        <a href="https://www.instagram.com/">Instagram</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.youtube.com/">YouTube</a>
+    </div>
+    <p><small>Website by Ahnaf Raskey</small></p>
+</footer>
+
+</body>
+
+</html>
