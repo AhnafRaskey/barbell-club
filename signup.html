@@ -63,24 +63,7 @@
             <p>Want help with your goals? <a href="personal-training.html">Fill out the personal training form</a>.</p>
         </section>
     </main>
-    <script>
-        const signupForm = document.getElementById('signup-form');
-        const password = document.getElementById('password');
-        const confirmation = document.getElementById('confirm-password');
-        function checkPasswords() {
-            confirmation.setCustomValidity(confirmation.value !== password.value ? 'Passwords must match.' : '');
-        }
-        password.addEventListener('input', checkPasswords);
-        confirmation.addEventListener('input', checkPasswords);
-        signupForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            checkPasswords();
-            if (!signupForm.reportValidity()) return;
-            document.getElementById('signup-result').textContent = 'Your signup passed validation. This is a demo only; no account was created and no information was saved.';
-            signupForm.reset();
-            confirmation.setCustomValidity('');
-        });
-    </script>
+    <script src="signup.js"></script>
 
 <footer>
     <h2>Visit Barbell Club</h2>
